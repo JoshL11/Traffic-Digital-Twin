@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Traffic Digital Twin</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Traffic Digital Twin</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#aaa">Motivation and purpose</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Workflow</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#result">Results</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <!-- <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Your Favorite Place for Free Bootstrap Themes</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header> -->
+        <!-- About-->
+        <section class="page-section  bg-primary " >
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Traffic Digital Twin</h2>
+                        <hr class="divider divider-light" />
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="page-section" id="aaa">
+            <div class="container px-4 px-lg-5">
+                
+                <hr class="divider" />
+                    <div class=" text-center">
+                        <div>
+                            <!-- <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div> -->
+                            <h3 class="h4 mb-2">Motivation and purpose</h3>
+                            <p class="text-muted mb-0">Traffic Digital Twin" is an advanced technology used for simulating and managing urban traffic, also known as traffic digital twinning. Based on real-world traffic system data, such as single-angle footage from intersection surveillance cameras, we have constructed a virtual, precise traffic model. This model allows users to observe current traffic conditions from different perspectives. This digital twin can be utilized for monitoring, analyzing, and optimizing urban traffic to address issues related to traffic efficiency, congestion reduction, and improved traffic safety.
+
+                                We employ technologies like YOLOv3, Vehicle ReID, Object Tracking, K-means Clustering, among others, to assist urban planners and traffic management departments in better understanding and addressing urban traffic issues.</p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Workflow</h2>
+                <hr class="divider" />
+                <img src="flow.jpg" alt="Flow" id = "flow">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <!-- <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div> -->
+                            <h3 class="h4 mb-2">Perform vehicle detection</h3>
+                            <p class="text-muted mb-0">First, we convert the input surveillance camera footage into a sequence of images at a frequency of 10Hz. With the input video being nearly 50 seconds long, this results in 490 input images. Next, we use a pre-trained YOLOv3 model to detect objects in each frame.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Vehicle ReID and Tracking</h3>
+                            <p class="text-muted mb-0">
+                                ReID:Before conducting object tracking, it is crucial to perform ReID (Re-Identification) for each vehicle. Here, we utilize ResNet for ReID, primarily focusing on feature extraction.</p>
+                            <p class="text-muted mb-0">
+                                Tracking:Each frame can be categorized into Matched Tracks, Unmatched Tracks, and Unmatched Detections. Each frame updates the age of the tracks, and if the age of an Unmatched Track exceeds the defined max_age, it implies that the vehicle has disappeared, and this track can be discarded. Moreover, if the score of an Unmatched Detection exceeds a certain threshold, a new track will be created for that detection.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Using Kmeans to detect color</h3>
+                            <p class="text-muted mb-0">
+                                We will crop each bounding box, allowing us to individually identify the dominant color within the region of each cropped vehicle. This approach ensures that the color detection process for one vehicle's area does not interfere with the detection of colors for other vehicles. We set the number of clusters to 3 for this clustering process.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2">Homographic Transformation</h3>
+                            <p class="text-muted mb-0">
+                                As our goal is to derive the digital twin solely from a single angle of the surveillance camera without requiring additional intrinsic or extrinsic parameters of the camera, existing methods to determine the transformation matrix cannot be employed. The implementation details involve initially identifying the satellite imagery of the surveillance camera location. Then, we mark the features appearing concurrently in both the video footage and the satellite image, such as zebra crossings, motorcycle waiting areas, road markings, and so on.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="result">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Results</h2>
+                <hr class="divider" />
+                <video width="480" height="360" muted autoplay >
+                    <source src="1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <video width="480" height="360" muted autoplay >
+                    <source src="2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <video width="480" height="360" muted  autoplay id="v3">
+                    <source src="3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <video width="480" height="310" muted  autoplay id="v3">
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <div class="row gx-4 gx-lg-5">
+                    <div class=" text-center">
+                        <div class="mt-5">
+                            
+                            <h3 class="h4 mb-2">Interpolation</h3>
+                            <p class="text-muted mb-0">The incomplete detection process can cause sudden disappearance of cars in the video, resulting in an undesirable video.</p>
+                            <p class="text-muted mb-0">Utilize linear interpolation to insert  points between two frames, creating a smoother transition throughout the entire video.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        
+        
+        <!-- Call to action-->
+        <!-- <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+            </div>
+        </section> -->
+        <!-- Contact-->
+        
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Cvlab</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
