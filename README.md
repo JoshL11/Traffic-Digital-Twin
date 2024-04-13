@@ -7,12 +7,12 @@ Developed a system capable of detecting the driver’s eyes and mouth to determi
 ![](./demo/1.mp4)
 
 ## Run
-
-1. Run `infer_reid_vehicle.py`.
+1. Download yolov3.weight
+2. Run `infer_reid_vehicle.py`.
 ```
 python infer_reid_vehicle.py --dets dets/taiwan 
 ```
-2. Run `Run.py`
+3. Run `Run.py`
 ```
 python Run.py
 ```
