@@ -1,7 +1,7 @@
 #traffic digital Twin
 Developed a system capable of detecting the driver’s eyes and mouth to determine the driver’s sobriety status.
 
-## Demo
+## Blueprint
 ![](./demo/blueprint.png)
 
 ![](./demo/1.mp4)
